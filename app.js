@@ -6,8 +6,12 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var symbolRouter = require('./routes/symbolListApi');
 
 var app = express();
+
+// 業務邏輯
+require('./app/gogoMainApi')(app)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
